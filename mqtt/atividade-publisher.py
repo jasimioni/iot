@@ -22,7 +22,7 @@ try:
         now = datetime.now().strftime("%H:%M:%S")
         client.publish(topic, now)
         print(f"Enviado: {now} para o tópico {topic}")
-        time.sleep(1)
+        time.sleep(30)
 
 except KeyboardInterrupt:
     print("\nEncerrando publicador...")
