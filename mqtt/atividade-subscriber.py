@@ -7,7 +7,7 @@ broker_address = os.environ.get("MQTT_BROKER")
 broker_username = os.environ.get("MQTT_USERNAME")
 broker_password = os.environ.get("MQTT_PASSWORD")
 port = 1883
-topic = "\Aula02\JoaoSimioni\Hora"
+topic = "\\Aula02\\JoaoSimioni\\Hora"
 
 
 def on_connect(client, userdata, flags, rc):
