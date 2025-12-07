@@ -1,4 +1,4 @@
-# Face Detection / Recognition — README
+# Face Detection / Recognition
 
 Overview
 --------
@@ -46,6 +46,7 @@ ESP32 components
 - Image2MQTT (ESP32-S3)
     - Flash with Arduino/PlatformIO. If you use the human_face_detect_msr01 pre-filter, make sure the ESP core is 3.0.7 (downgrade your ESP32 board package if needed).
     - Flashes camera frames to the configured MQTT topic (optionally only when a face is detected).
+    
 - MQTTDisplayInfo (ESP32-WROVER-DEV)
     - Flash to ESP32-WROVER-DEV and wire the LCD. It subscribes to face recognition topics and displays recognized names/info.
 
@@ -60,3 +61,21 @@ Notes & tips
 - yolov5n-face.onnx is intended for fast inference; for higher accuracy replace with a larger model and adjust code.
 - If using human_face_detect_msr01 on ESP32-S3: many newer ESP cores are incompatible — switch to core 3.0.7 in your board manager/toolchain.
 - Keep known_faces updated with clean samples; re-generate embeddings if recognition quality drops.
+
+Screenshots
+-----------
+![ESP32-S3 camera publisher](screenshots/esp32-s3.png)
+
+*ESP32-S3 (Image2MQTT) — camera publishing frames to MQTT.*
+
+![ESP32-WROVER display](screenshots/esp32-wroover.png)
+
+*ESP32-WROVER-DEV (MQTTDisplayInfo) — shows recognition results on an LCD.*
+
+![Node-RED dashboard overview](screenshots/node-red-dashboard.png)
+
+*Node-RED dashboard — aggregated camera, recognition and network widgets.*
+
+![Node-RED flow editor](screenshots/node-red-flow.png)
+
+*Node-RED flow — topic wiring and processing used by the project.*
