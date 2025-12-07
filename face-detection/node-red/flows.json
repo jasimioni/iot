@@ -1,0 +1,618 @@
+[
+    {
+        "id": "5cfc0f86848bd593",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "393c4dcda6cc68c7",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "4afd1c947ff1ce7d",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "d894914e651514df",
+        "type": "ui-page",
+        "name": "Projeto IoT",
+        "ui": "393c4dcda6cc68c7",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "4afd1c947ff1ce7d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "208d2aaf8ea5b3ee",
+        "type": "ui-group",
+        "name": "Configure Stream",
+        "page": "d894914e651514df",
+        "width": "2",
+        "height": "3",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5199245318768e6b",
+        "type": "mqtt-broker",
+        "name": "CAM CMD",
+        "broker": "",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "86d812b4ac7c1c04",
+        "type": "ui-group",
+        "name": "Stream Data",
+        "page": "d894914e651514df",
+        "width": "2",
+        "height": "3",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "27d15c7edf24b3ec",
+        "type": "ui-group",
+        "name": "Stream",
+        "page": "d894914e651514df",
+        "width": "3",
+        "height": "5",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "92801aaa245295a8",
+        "type": "ui-button",
+        "z": "5cfc0f86848bd593",
+        "group": "208d2aaf8ea5b3ee",
+        "name": "Disable Stream",
+        "label": "Disable Stream",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "disable",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "e2bbd6b0d923a536"
+            ]
+        ]
+    },
+    {
+        "id": "c4e87f01d0901da1",
+        "type": "ui-button",
+        "z": "5cfc0f86848bd593",
+        "group": "208d2aaf8ea5b3ee",
+        "name": "Enable Stream",
+        "label": "Enable Stream",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "enable",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "e2bbd6b0d923a536"
+            ]
+        ]
+    },
+    {
+        "id": "f2ce4a56dc607cf2",
+        "type": "ui-button",
+        "z": "5cfc0f86848bd593",
+        "group": "208d2aaf8ea5b3ee",
+        "name": "Disable \"only send wIth face\"",
+        "label": "Disable \"only send wIth face\"",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "disable_only_send_if_face_detected",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "e2bbd6b0d923a536"
+            ]
+        ]
+    },
+    {
+        "id": "b83f12cb314a5127",
+        "type": "ui-button",
+        "z": "5cfc0f86848bd593",
+        "group": "208d2aaf8ea5b3ee",
+        "name": "Enable \"only send wIth face\"",
+        "label": "Enable \"only send wIth face\"",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "enable_only_send_if_face_detected",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 260,
+        "y": 260,
+        "wires": [
+            [
+                "e2bbd6b0d923a536"
+            ]
+        ]
+    },
+    {
+        "id": "e2bbd6b0d923a536",
+        "type": "mqtt out",
+        "z": "5cfc0f86848bd593",
+        "name": "",
+        "topic": "esp32/cam/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5199245318768e6b",
+        "x": 600,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "92845fb27048a6e8",
+        "type": "ui-template",
+        "z": "5cfc0f86848bd593",
+        "group": "208d2aaf8ea5b3ee",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a2804be49070040",
+        "type": "mqtt in",
+        "z": "5cfc0f86848bd593",
+        "name": "MQTT  Traffic",
+        "topic": "monitor/traffic/1883",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "5199245318768e6b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 340,
+        "wires": [
+            [
+                "9f60d4870df456a0",
+                "22379ab8a918f501",
+                "e59e6babcdfb91ac"
+            ]
+        ]
+    },
+    {
+        "id": "9f60d4870df456a0",
+        "type": "ui-gauge",
+        "z": "5cfc0f86848bd593",
+        "name": "",
+        "group": "86d812b4ac7c1c04",
+        "order": 1,
+        "value": "payload.bps_5s / 1000",
+        "valueType": "jsonata",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "BPS 5s",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "kbps",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "300",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "500",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 440,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22379ab8a918f501",
+        "type": "ui-gauge",
+        "z": "5cfc0f86848bd593",
+        "name": "",
+        "group": "86d812b4ac7c1c04",
+        "order": 2,
+        "value": "payload.bps_15s / 1000",
+        "valueType": "jsonata",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "BPS 15s",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "kbps",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "300",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "500",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 440,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e59e6babcdfb91ac",
+        "type": "ui-gauge",
+        "z": "5cfc0f86848bd593",
+        "name": "",
+        "group": "86d812b4ac7c1c04",
+        "order": 3,
+        "value": "payload.bps_60s /1000",
+        "valueType": "jsonata",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "BPS 60s",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "kbps",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "300",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "500",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 440,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0e342cd58008e10c",
+        "type": "ui-template",
+        "z": "5cfc0f86848bd593",
+        "group": "27d15c7edf24b3ec",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 1,
+        "width": "3",
+        "height": "5",
+        "head": "",
+        "format": "<div\n    style=\"width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #000; overflow: hidden;\">\n    <img\n        src=\"http://ppgia.zabster.com.br/stream/video_feed\"\n        alt=\"Live Stream\"\n        style=\"\n            width: 100%; \n            height: 100%; \n            object-fit: contain; /* Ensures the whole video is visible without stretching */\n            display: block;\n        \">\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 600,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "982341d6594cac2f",
+        "type": "mqtt in",
+        "z": "5cfc0f86848bd593",
+        "name": "",
+        "topic": "esp32/cam/whois",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5199245318768e6b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 500,
+        "wires": [
+            [
+                "38630f8c483183a3"
+            ]
+        ]
+    },
+    {
+        "id": "38630f8c483183a3",
+        "type": "ui-text",
+        "z": "5cfc0f86848bd593",
+        "group": "27d15c7edf24b3ec",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Person",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 420,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "fad47e0e78f2ef3c",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.29.0"
+        }
+    }
+]
